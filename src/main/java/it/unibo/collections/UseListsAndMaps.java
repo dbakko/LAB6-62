@@ -41,17 +41,25 @@ public final class UseListsAndMaps {
          */
 
          LinkedList<Integer> Linklist = new LinkedList<>();
-         Linklist.addAll(Arrlist);
+
+         Linklist.addAll(Arrlist); //Dalla javadoc, hgo trovato il comando che prende in input gli elementi di una collezione
 
          System.out.println(Linklist);
-
-
 
         /*
          * 3) Using "set" and "get" and "size" methods, swap the first and last
          * element of the first list. You can not use any "magic number".
          * (Suggestion: use a temporary variable)
          */
+
+         int t = Arrlist.getFirst();
+         System.out.println(t);
+         System.out.println(Arrlist.getLast());
+         Arrlist.set(0, Arrlist.getLast());
+         Arrlist.set(Arrlist.size()-1, t);
+         System.out.println(Arrlist.getFirst());
+         System.out.println(Arrlist.getLast());
+
         /*
          * 4) Using a single for-each, print the contents of the arraylist.
          */
