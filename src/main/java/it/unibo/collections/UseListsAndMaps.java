@@ -1,6 +1,7 @@
 package it.unibo.collections;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -27,11 +28,15 @@ public final class UseListsAndMaps {
          * from 1000 (included) to 2000 (excluded).
          */
 
+         /* 
+
          ArrayList<Integer> Arrlist = new ArrayList<>();
 
          for (int i = 1000; i <= 2000 ; i++){
             Arrlist.add(i);
          }
+
+         */
 
         // System.out.println(Arrlist);
 
@@ -85,12 +90,14 @@ public final class UseListsAndMaps {
          * TestPerformance.java.
          */
 
-          
+          /* 
 
         // long time = System.nanoTime();
          for (int i = 1; i <= ELEMS; i++) {
             Arrlist.addFirst(i);
         }
+
+        */
         
         /* 
 
@@ -105,12 +112,14 @@ public final class UseListsAndMaps {
                 + "s"
         );
 
-        */
+        
 
         // long time2 = System.nanoTime();
          for (int i = 1; i <= ELEMS; i++) {
             Linklist.addFirst(i);
         }
+
+        */
 
 
         /* 
@@ -134,6 +143,8 @@ public final class UseListsAndMaps {
          * LinkedList, using the collections of point 5. In order to measure
          * times, use as example TestPerformance.java.
          */
+
+         /* 
 
          long time3 = System.nanoTime();
 
@@ -164,6 +175,10 @@ public final class UseListsAndMaps {
                 + millis4/1000000
                 + "s"
         );
+
+        */
+
+
         /*
          * 7) Build a new Map that associates to each continent's name its
          * population:
@@ -180,8 +195,25 @@ public final class UseListsAndMaps {
          *
          * Oceania -> 38,304,000
          */
+
+         Map<String, Long> ContinentMap = new HashMap<>();
+
+         ContinentMap.put("Africa",1_110_635_000L);
+         ContinentMap.put("Americas",972_005_000L);
+         ContinentMap.put("Antarctica",0L );
+         ContinentMap.put("Asia",4_298_723_000L);
+         ContinentMap.put("Europe",742_452_000L);
+         ContinentMap.put("Oceania",38_304_000L);
+
         /*
          * 8) Compute the population of the world
          */
+
+        long tot = 0;
+         for (Long t : ContinentMap.values()){
+            tot += t;
+         }
+         System.out.println(tot);
+
     }
 }
